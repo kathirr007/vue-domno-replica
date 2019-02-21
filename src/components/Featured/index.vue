@@ -1,28 +1,26 @@
 <template>
-    <div>
-        <carousel
-            :per-page="1"
-            :mouse-drag="true"
-            :pagination-enabled="false"
-        >
-            <slide v-for="(slide,i) in slides" :key="i">
-                <div 
-                    class="slider_bck"
-                    :style="{'background':`url(${slide.bck})`}"
-                >
-                    <div class="container slider-container">
-                        <div class="text">
-                            <div>{{ slide.text }}</div>
-                        </div>
-                        <div class="image">
-                            <img :src="slide.img" alt="">
-                        </div>
+    <carousel
+        :per-page="1"
+        :mouse-drag="true"
+        :pagination-enabled="false"
+    >
+        <slide v-for="(slide,i) in slides" :key="i">
+            <div 
+                class="slider_bck"
+                :style="{'background':`url(${slide.bck})`}"
+            >
+                <div class="container slider-container">
+                    <div class="text">
+                        <div>{{ slide.text }}</div>
                     </div>
-
+                    <div class="image">
+                        <img :src="slide.img" alt="">
+                    </div>
                 </div>
-            </slide>
-        </carousel>
-    </div>
+
+            </div>
+        </slide>
+    </carousel>
 </template>
 
 <script>
@@ -56,6 +54,10 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    .VueCarousel{
+        // height: calc(100vh - 132px);
+        .VueCarousel-slide {
+        }
+    }
 </style>
