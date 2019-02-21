@@ -13,6 +13,28 @@
                 {{ button.name }}
             </md-button>
         </div>
+        <div class="products_items">
+            <md-card
+                v-for="(product,i) in products"
+                :key="i"
+                v-show="product.type === activeProduct"
+            >
+                <md-card-media md-ratio="16:9">
+                    <img :src="require(`../../assets/images/products/${product.img}`)" alt="">
+                </md-card-media>
+                <md-card-header>
+                    <h2 class="md-title">
+                        {{ product.name }}
+                    </h2>
+                    <div class="md-subhead">
+                        <span>${{ product.price }}</span>
+                    </div>
+                </md-card-header>
+                <md-card-content>
+                    {{ product.desc }}
+                </md-card-content>
+            </md-card>
+        </div>
     </div>
 </template>
 
@@ -26,6 +48,7 @@
                     {name:'salat', active:false},
                     {name:'dessert', active:false}
                 ],
+                activeProduct:'pizza',
                 products:[]
             }
         },
@@ -34,6 +57,7 @@
                 this.buttons.forEach(item => {
                     if(item.name === value) {
                         item.active = true;
+                        this.activeProduct = item.name
                     } else {
                         item.active = false;
                     }
@@ -60,6 +84,14 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    .md-card{
+        width: 32%;
+        margin-bottom: 20px;
+    }
+    .products_items{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 </style>
