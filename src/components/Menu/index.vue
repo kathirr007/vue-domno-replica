@@ -25,7 +25,8 @@
                     {name:'burgers', active:false},
                     {name:'salat', active:false},
                     {name:'dessert', active:false}
-                ]
+                ],
+                products:[]
             }
         },
         methods: {
@@ -38,6 +39,23 @@
                     }
                 })
             }
+        },
+        created() {
+            this.$http.get('products.json')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    let list = []
+                    
+                    for(let key in data) {
+                        list.push({
+                            ...data[key],
+                            id: key
+                        })
+                    }
+                    console.log(list)
+                    this.products = list
+                })
         }
     }
 </script>
