@@ -55,9 +55,5 @@
 </script>
 
 <style scoped lang="scss">
-    .VueCarousel{
-        // height: calc(100vh - 132px);
-        .VueCarousel-slide {
-        }
-    }
+    
 </style>

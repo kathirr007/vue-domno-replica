@@ -68,7 +68,7 @@
             this.$http.get('products.json')
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     let list = []
                     
                     for(let key in data) {
@@ -77,7 +77,7 @@
                             id: key
                         })
                     }
-                    console.log(list)
+                    // console.log(list)
                     this.products = list
                 })
         }

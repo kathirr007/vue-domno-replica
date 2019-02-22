@@ -1,5 +1,8 @@
 # vue-domno-replica
 
+
+[![Build Status](https://travis-ci.org/kathirr007/vue-domno-replica.svg?branch=master)](https://travis-ci.org/kathirr007/vue-domno-replica)
+
 ## Project setup
 ```
 yarn install
