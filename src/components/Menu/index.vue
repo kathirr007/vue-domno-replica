@@ -91,7 +91,20 @@
     }
     .products_items{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
+        .md-card {
+            width:80%;
+            .md-card-media {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+            @media screen and(min-width: 600px){
+                width: calc(100% / 2 - (30px));
+            }
+            @media screen and(min-width: 960px){
+                width: calc(100% / 3 - (30px));
+            }
+        }
     }
 </style>
